@@ -16,17 +16,17 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
           "inline-flex items-center justify-center rounded-xl font-semibold transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 active:scale-[0.98]",
           // Variants
           {
-            "bg-[#B89B72] text-[#050505] hover:bg-[#C8AD85] shadow-sm focus-visible:ring-[#B89B72]":
+            "bg-[#D4B77A] text-[#3A3024] hover:bg-[#B8955A] shadow-sm focus-visible:ring-[#B8955A]":
               variant === "primary" || variant === "accent",
-            "border border-[rgba(184,155,114,0.28)] bg-transparent text-[#F5F1E8] hover:bg-[rgba(184,155,114,0.10)] focus-visible:ring-[#B89B72]":
+            "border border-[#B8955A] bg-[#FBF9F4] text-[#3A3024] hover:bg-[#EEE7D8] focus-visible:ring-[#B8955A]":
               variant === "secondary",
             "bg-[#10B981] text-white hover:bg-[#059669] shadow-sm focus-visible:ring-[#10B981]":
               variant === "accent-emerald",
-            "border border-white/10 bg-transparent text-[#F5F1E8] hover:bg-white/5 hover:border-white/20 focus-visible:ring-[#B89B72]":
+            "border border-[#D8CCB8] bg-[#FBF9F4] text-[#3A3024] hover:bg-[#EEE7D8] focus-visible:ring-[#B8955A]":
               variant === "outline",
-            "bg-transparent text-[#F5F1E8] hover:bg-white/5 focus-visible:ring-[#B89B72]":
+            "bg-transparent text-[#3A3024] hover:bg-[#EEE7D8] focus-visible:ring-[#B8955A]":
               variant === "ghost",
-            "bg-transparent text-[#B89B72] underline-offset-4 hover:text-[#C8AD85] p-0 h-auto":
+            "bg-transparent text-[#B8955A] underline-offset-4 hover:text-[#D4B77A] p-0 h-auto":
               variant === "link",
           },
           // Sizes

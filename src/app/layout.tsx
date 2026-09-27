@@ -120,6 +120,7 @@ export default function RootLayout({
     "@id": "https://www.zovogateway.com/#agency",
     "url": "https://www.zovogateway.com",
     "telephone": CONTACT_INFO.phone,
+    "email": CONTACT_INFO.email,
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "113, Podder Point, Tower B, 3rd Floor, Nexus Works, Park Street",

@@ -57,24 +57,24 @@ export default function Home() {
               
               <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
                 <div className="text-center space-y-4">
-                  <div className="h-4 w-32 bg-white/5 rounded mx-auto animate-pulse" />
-                  <div className="h-8 w-64 bg-white/5 rounded mx-auto animate-pulse" />
+                  <div className="h-4 w-32 bg-[#D8CCB8]/50 rounded mx-auto animate-pulse" />
+                  <div className="h-8 w-64 bg-[#D8CCB8]/50 rounded mx-auto animate-pulse" />
                 </div>
                 <CountryCardsSkeleton />
               </div>
 
               <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
                 <div className="text-center space-y-4">
-                  <div className="h-4 w-32 bg-white/5 rounded mx-auto animate-pulse" />
-                  <div className="h-8 w-64 bg-white/5 rounded mx-auto animate-pulse" />
+                  <div className="h-4 w-32 bg-[#D8CCB8]/50 rounded mx-auto animate-pulse" />
+                  <div className="h-8 w-64 bg-[#D8CCB8]/50 rounded mx-auto animate-pulse" />
                 </div>
                 <ServicesSkeleton />
               </div>
 
               <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
                 <div className="text-center space-y-4">
-                  <div className="h-4 w-32 bg-white/5 rounded mx-auto animate-pulse" />
-                  <div className="h-8 w-64 bg-white/5 rounded mx-auto animate-pulse" />
+                  <div className="h-4 w-32 bg-[#D8CCB8]/50 rounded mx-auto animate-pulse" />
+                  <div className="h-8 w-64 bg-[#D8CCB8]/50 rounded mx-auto animate-pulse" />
                 </div>
                 <CardGridSkeleton />
               </div>

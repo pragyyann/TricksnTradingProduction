@@ -29,7 +29,7 @@ export interface Step {
 export const CONTACT_INFO = {
   phone: "+91 98742 59915",
   phoneRaw: "+919874259915",
-  email: "info@zovogateway.com",
+  email: "hr@zovogateway.com",
   address: "113, Podder Point, Tower B, 3rd Floor\nNexus Works, Park Street\nKolkata, West Bengal - 700016",
   whatsappUrl: "https://wa.me/919874259915?text=Hi%20ZOVO%20Gateway%2C%20I%20want%20to%20know%20more%20about%20overseas%20jobs.",
   whatsappNumber: "+91 98742 59915",

@@ -18,7 +18,7 @@ Open the constants file and modify the values in the `CONTACT_INFO` object:
 export const CONTACT_INFO = {
   phone: "+91 9220809078",                                                     // Displayed in text
   phoneRaw: "+919220809078",                                                  // Triggered on "Call Now" anchors
-  email: "info@trendyfortune.com",                                             // Displayed & triggered on mailto: anchors
+  email: "hr@zovogateway.com",                                                 // Displayed & triggered on mailto: anchors
   address: "Plot No. 42, Sector 11, CBD Belapur, Navi Mumbai, Maharashtra...", // Physical office text
   whatsappUrl: "https://wa.me/919220809078?text=...",                          // Link pre-filled texts
   mapEmbedUrl: "https://www.google.com/maps/embed?pb=..."                      // Google Maps iframe URL

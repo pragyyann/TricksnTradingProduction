@@ -16,9 +16,9 @@ function ApplyRedirector() {
 
   return (
     <div className="flex flex-col items-center gap-4 text-center max-w-sm">
-      <span className="w-10 h-10 rounded-full border-4 border-[#B89B72] border-t-transparent animate-spin" />
-      <h2 className="text-xl font-bold tracking-tight text-[#F4F1EA]">Redirecting to Application Form</h2>
-      <p className="text-[#B8B2A7] text-sm">
+      <span className="w-10 h-10 rounded-full border-4 border-[#B8955A] border-t-transparent animate-spin" />
+      <h2 className="text-xl font-bold tracking-tight text-[#3A3024]">Redirecting to Application Form</h2>
+      <p className="text-[#756B5D] text-sm">
         Securing your application channel. Please wait while we load the recruitment form...
       </p>
     </div>
@@ -27,12 +27,12 @@ function ApplyRedirector() {
 
 export default function ApplyPage() {
   return (
-    <div className="min-h-screen bg-[#050505] flex flex-col items-center justify-center text-[#F4F1EA] px-4 font-sans">
+    <div className="min-h-screen bg-[#F7F3EA] flex flex-col items-center justify-center text-[#3A3024] px-4 font-sans">
       <React.Suspense fallback={
         <div className="flex flex-col items-center gap-4 text-center max-w-sm">
-          <span className="w-10 h-10 rounded-full border-4 border-[#B89B72] border-t-transparent animate-spin" />
-          <h2 className="text-xl font-bold tracking-tight text-[#F4F1EA]">Loading Secure Portal</h2>
-          <p className="text-[#B8B2A7] text-sm">
+          <span className="w-10 h-10 rounded-full border-4 border-[#B8955A] border-t-transparent animate-spin" />
+          <h2 className="text-xl font-bold tracking-tight text-[#3A3024]">Loading Secure Portal</h2>
+          <p className="text-[#756B5D] text-sm">
             Initializing your application connection...
           </p>
         </div>

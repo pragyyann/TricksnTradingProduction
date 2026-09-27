@@ -134,23 +134,22 @@ export function LeadForm() {
   };
 
   return (
-    <section id="for-employers" className="pt-20 pb-28 md:pb-20 bg-[#080808] relative overflow-hidden border-t border-[rgba(255,255,255,0.07)]">
+    <section id="for-employers" className="pt-20 pb-28 md:pb-20 bg-[#EEE7D8] relative overflow-hidden border-t border-[#D8CCB8]">
       {/* Anchor targets for hash navigation and scrolling */}
       <div id="job-seeker" className="absolute top-0 left-0 h-0 w-0 pointer-events-none" />
       <div id="employer" className="absolute top-0 left-0 h-0 w-0 pointer-events-none" />
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,rgba(182,146,91,0.03),transparent)]" />
 
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Header */}
         <div className="text-center max-w-2xl mx-auto mb-12 space-y-4">
-          <div className="text-xs font-bold text-[#B89B72] tracking-widest uppercase">
+          <div className="text-xs font-bold text-[#8B6F42] tracking-widest uppercase">
             {t("tag")}
           </div>
-          <h2 id="lead-forms" className="text-3xl md:text-4xl font-display font-extrabold text-[#F5F1E8]">
+          <h2 id="lead-forms" className="text-3xl md:text-4xl font-display font-extrabold text-[#3A3024]">
             {t("title")}
           </h2>
-          <p className="text-sm md:text-base text-[#B8B2A7] leading-relaxed font-sans">
+          <p className="text-sm md:text-base text-[#756B5D] leading-relaxed font-sans">
             {t("desc")}
           </p>
         </div>
@@ -158,7 +157,7 @@ export function LeadForm() {
         {/* Form Container */}
         <Tabs defaultValue="seeker" value={activeTab} onValueChange={setActiveTab} className="w-full">
           <div className="flex justify-center mb-8">
-            <TabsList className="grid grid-cols-2 bg-[#050505] border border-white/8 p-1 rounded-full w-full max-w-sm sm:max-w-md h-12">
+            <TabsList className="grid grid-cols-2 bg-[#EEE7D8] border border-[#D8CCB8] p-1 rounded-full w-full max-w-sm sm:max-w-md h-12">
               <TabsTrigger
                 id="tab-seeker"
                 value="seeker"
@@ -178,7 +177,7 @@ export function LeadForm() {
             </TabsList>
           </div>
 
-          <div className="bg-[#111111] border border-white/8 rounded-3xl p-6 md:p-10 shadow-xl">
+          <div className="bg-[#FBF9F4] border border-[#D8CCB8] rounded-3xl p-6 md:p-10 shadow-sm">
             <AnimatePresence mode="wait">
               {/* Job Seeker Form Tab */}
               {activeTab === "seeker" ? (
@@ -204,7 +203,7 @@ export function LeadForm() {
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     {/* Company Name */}
                     <div className="space-y-2">
-                      <label htmlFor="companyName" className="text-sm font-semibold text-[#B0B0B0]">
+                      <label htmlFor="companyName" className="text-sm font-semibold text-[#3A3024]">
                         Company Name <span className="text-red-500">*</span>
                       </label>
                       <Input
@@ -220,7 +219,7 @@ export function LeadForm() {
 
                     {/* Contact Person */}
                     <div className="space-y-2">
-                      <label htmlFor="contactPerson" className="text-sm font-semibold text-[#B0B0B0]">
+                      <label htmlFor="contactPerson" className="text-sm font-semibold text-[#3A3024]">
                         Contact Person <span className="text-red-500">*</span>
                       </label>
                       <Input
@@ -238,7 +237,7 @@ export function LeadForm() {
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     {/* Phone Number */}
                     <div className="space-y-2">
-                      <label htmlFor="employerPhone" className="text-sm font-semibold text-[#B0B0B0]">
+                      <label htmlFor="employerPhone" className="text-sm font-semibold text-[#3A3024]">
                         Business Phone Number <span className="text-red-500">*</span>
                       </label>
                       <Input
@@ -255,7 +254,7 @@ export function LeadForm() {
 
                     {/* Email */}
                     <div className="space-y-2">
-                      <label htmlFor="employerEmail" className="text-sm font-semibold text-[#B0B0B0]">
+                      <label htmlFor="employerEmail" className="text-sm font-semibold text-[#3A3024]">
                         Business Email <span className="text-red-500">*</span>
                       </label>
                       <Input
@@ -274,25 +273,25 @@ export function LeadForm() {
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                     {/* Industry dropdown */}
                     <div className="space-y-2">
-                      <label htmlFor="industry" className="text-sm font-semibold text-[#B0B0B0]">
+                      <label htmlFor="industry" className="text-sm font-semibold text-[#3A3024]">
                         Industry Sector <span className="text-red-500">*</span>
                       </label>
                       <div className="relative">
                         <select
                           id="industry"
-                          className={`flex h-14 w-full rounded-2xl border border-white/10 bg-[#050505] text-white px-5 py-2 text-base outline-none focus:border-[#B89B72]/60 focus:ring-2 focus:ring-[#B89B72]/20 appearance-none cursor-pointer ${
-                            employerForm.formState.errors.industry ? "border-red-500 focus:ring-red-500/20" : ""
+                          className={`flex h-14 w-full rounded-2xl border border-[#D8CCB8] bg-[#FBF9F4] text-[#3A3024] px-5 py-2 text-base outline-none focus:border-[#B8955A] focus:ring-1 focus:ring-[#B8955A] appearance-none cursor-pointer ${
+                            employerForm.formState.errors.industry ? "border-red-500 focus:ring-red-500" : ""
                           }`}
                           {...employerForm.register("industry")}
                         >
-                          <option value="" className="bg-[#050505] text-[#7D766B]">Select industry...</option>
+                          <option value="" className="bg-[#FBF9F4] text-[#9A9184]">Select industry...</option>
                           {INDUSTRIES.map((ind) => (
-                            <option key={ind.id} value={ind.name} className="bg-[#050505] text-white">
+                            <option key={ind.id} value={ind.name} className="bg-[#FBF9F4] text-[#3A3024]">
                               {ind.name}
                             </option>
                           ))}
                         </select>
-                        <div className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-[#737373]">
+                        <div className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-[#9A9184]">
                           ▼
                         </div>
                       </div>
@@ -303,7 +302,7 @@ export function LeadForm() {
 
                     {/* Workers required */}
                     <div className="space-y-2">
-                      <label htmlFor="workersRequired" className="text-sm font-semibold text-[#B0B0B0]">
+                      <label htmlFor="workersRequired" className="text-sm font-semibold text-[#3A3024]">
                         Workers Needed <span className="text-red-500">*</span>
                       </label>
                       <Input
@@ -321,7 +320,7 @@ export function LeadForm() {
 
                     {/* Country Location */}
                     <div className="space-y-2">
-                      <label htmlFor="location" className="text-sm font-semibold text-[#B0B0B0]">
+                      <label htmlFor="location" className="text-sm font-semibold text-[#3A3024]">
                         Deploy Location / Country <span className="text-red-500">*</span>
                       </label>
                       <Input
@@ -338,7 +337,7 @@ export function LeadForm() {
 
                   {/* Required Job Roles */}
                   <div className="space-y-2">
-                    <label htmlFor="requiredJobRoles" className="text-sm font-semibold text-[#B0B0B0]">
+                    <label htmlFor="requiredJobRoles" className="text-sm font-semibold text-[#3A3024]">
                       Required Job Roles <span className="text-red-500">*</span>
                     </label>
                     <Input
@@ -354,7 +353,7 @@ export function LeadForm() {
 
                   {/* Message */}
                   <div className="space-y-2">
-                    <label htmlFor="employerMessage" className="text-sm font-semibold text-[#B0B0B0]">
+                    <label htmlFor="employerMessage" className="text-sm font-semibold text-[#3A3024]">
                       Inquiry Details <span className="text-red-500">*</span>
                     </label>
                     <Textarea
@@ -372,10 +371,10 @@ export function LeadForm() {
                     <input
                       id="employerConsent"
                       type="checkbox"
-                      className="mt-0.5 h-5 w-5 rounded border-white/10 bg-[#050505] text-[#B89B72] focus:ring-[#B89B72] cursor-pointer"
+                      className="mt-0.5 h-5 w-5 rounded border-[#D8CCB8] bg-[#FBF9F4] text-[#B8955A] focus:ring-[#B8955A] cursor-pointer"
                       {...employerForm.register("consent")}
                     />
-                    <span className="text-sm text-[#A3A3A3] leading-snug">
+                    <span className="text-sm text-[#756B5D] leading-snug">
                       I agree to be contacted by ZOVO Gateway regarding this inquiry. <span className="text-red-500">*</span>
                     </span>
                   </label>
@@ -399,7 +398,7 @@ export function LeadForm() {
                   <Button
                     type="submit"
                     variant="primary"
-                    className="w-full justify-center gap-2 h-12 shadow-lg cursor-pointer rounded-xl"
+                    className="w-full justify-center gap-2 h-12 shadow-sm cursor-pointer rounded-xl"
                     isLoading={isSubmittingEmployer}
                     disabled={isSubmittingEmployer}
                   >

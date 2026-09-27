@@ -15,22 +15,18 @@ export function FAQSection() {
   };
 
   return (
-    <section id="faq" className="py-20 bg-[#050505] relative overflow-hidden w-full border-t border-white/8">
-      {/* Background decoration */}
-      <div className="absolute top-0 left-0 -z-10 w-[450px] h-[450px] bg-[#B89B72]/0.01 rounded-full blur-[90px] -translate-x-1/4 -translate-y-1/4" />
-      <div className="absolute bottom-0 right-0 -z-10 w-[400px] h-[400px] bg-[#B89B72]/0.01 rounded-full blur-[80px] translate-x-1/4 translate-y-1/4" />
-
+    <section id="faq" className="py-20 bg-[#F7F3EA] relative overflow-hidden w-full border-t border-[#D8CCB8]">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
-          <div className="text-xs font-bold text-[#B89B72] tracking-widest uppercase">
+          <div className="text-xs font-bold text-[#8B6F42] tracking-widest uppercase">
             {t("sectionLabel")}
           </div>
-          <h2 className="text-3xl md:text-4xl font-display font-extrabold text-[#F4F1EA]">
+          <h2 className="text-3xl md:text-4xl font-display font-extrabold text-[#3A3024]">
             {t("heading")}
           </h2>
-          <p className="text-base md:text-lg text-[#B8B2A7] leading-relaxed font-sans">
+          <p className="text-base md:text-lg text-[#756B5D] leading-relaxed font-sans">
             {t("subtitle")}
           </p>
         </div>
@@ -44,8 +40,8 @@ export function FAQSection() {
                 key={item.id}
                 className={`rounded-2xl border transition-all duration-300 overflow-hidden ${
                   isOpen
-                    ? "border-[#B89B72]/45 bg-[#111111] shadow-sm"
-                    : "border-white/8 bg-[#0A0A0A] hover:border-[#B89B72]/30"
+                    ? "border-[#B8955A] bg-[#FBF9F4] shadow-sm"
+                    : "border-[#D8CCB8] bg-[#FBF9F4] hover:border-[#B8955A]"
                 }`}
               >
                 {/* Accordion Trigger Header */}
@@ -54,13 +50,13 @@ export function FAQSection() {
                   onClick={() => toggleFAQ(item.id)}
                   aria-expanded={isOpen}
                   aria-controls={`faq-answer-${item.id}`}
-                  className="w-full flex items-center justify-between px-6 py-5 text-left font-display font-extrabold text-base md:text-lg text-[#F4F1EA] cursor-pointer focus:outline-none focus:text-[#B89B72] transition-colors"
+                  className="w-full flex items-center justify-between px-6 py-5 text-left font-display font-extrabold text-base md:text-lg text-[#3A3024] cursor-pointer focus:outline-none focus:text-[#B8955A] transition-colors"
                 >
-                  <span className={isOpen ? "text-[#B89B72]" : ""}>
+                  <span className={isOpen ? "text-[#B8955A]" : ""}>
                     {t(item.questionKey)}
                   </span>
                   <span className={`shrink-0 ml-4 p-1.5 rounded-lg transition-colors ${
-                    isOpen ? "bg-[#B89B72]/10 text-[#B89B72]" : "bg-[#111111] border border-white/8 text-[#F4F1EA]"
+                    isOpen ? "bg-[#EEE7D8] text-[#B8955A]" : "bg-[#EEE7D8] border border-[#D8CCB8] text-[#3A3024]"
                   }`}>
                     {isOpen ? (
                       <Minus className="h-4 w-4" />
@@ -80,7 +76,7 @@ export function FAQSection() {
                       exit={{ height: 0, opacity: 0 }}
                       transition={{ duration: 0.25, ease: "easeInOut" }}
                     >
-                      <div className="px-6 pb-6 pt-1 text-sm md:text-base text-[#B8B2A7] leading-relaxed font-sans border-t border-white/8 bg-[#111111]/50">
+                      <div className="px-6 pb-6 pt-1 text-sm md:text-base text-[#756B5D] leading-relaxed font-sans border-t border-[#D8CCB8] bg-[#FBF9F4]">
                         {t(item.answerKey)}
                       </div>
                     </motion.div>

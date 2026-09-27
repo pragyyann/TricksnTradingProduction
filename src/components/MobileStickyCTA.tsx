@@ -27,13 +27,13 @@ export function MobileStickyCTA() {
   const whatsappUrl = getWhatsAppLink(locale);
 
   return (
-    <div className="fixed bottom-0 left-0 right-0 z-40 bg-[#0A0A0A]/95 backdrop-blur-md border-t border-white/8 py-3 px-4 shadow-none flex items-center gap-3 lg:hidden">
+    <div className="fixed bottom-0 left-0 right-0 z-40 bg-[#F7F3EA]/95 backdrop-blur-md border-t border-[#D8CCB8] py-3 px-4 shadow-sm flex items-center gap-3 lg:hidden">
       {/* Call Now button */}
       <a
         href={`tel:${CONTACT_INFO.phoneRaw}`}
-        className="flex-1 flex items-center justify-center gap-2 h-12 bg-[#111111] hover:bg-[#141414] text-[#F4F1EA] border border-white/8 rounded-xl font-bold text-sm transition-all active:scale-[0.98]"
+        className="flex-1 flex items-center justify-center gap-2 h-12 bg-[#FBF9F4] hover:bg-[#EEE7D8] text-[#3A3024] border border-[#D8CCB8] rounded-xl font-bold text-sm transition-all active:scale-[0.98] shadow-sm"
       >
-        <Phone className="h-4 w-4 text-[#B89B72]" />
+        <Phone className="h-4 w-4 text-[#B8955A]" />
         <span>{t("call")}</span>
       </a>
 

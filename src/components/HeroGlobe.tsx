@@ -166,7 +166,7 @@ export function HeroGlobe() {
       // Draw subtle circular boundary
       ctx.beginPath();
       ctx.arc(centerX, centerY, radius, 0, 2 * Math.PI);
-      ctx.strokeStyle = "rgba(184, 155, 114, 0.28)";
+      ctx.strokeStyle = "rgba(216, 204, 184, 0.7)";
       ctx.lineWidth = 1;
       ctx.stroke();
 
@@ -194,10 +194,10 @@ export function HeroGlobe() {
           let dotRadius: number;
 
           if (p.isLandPoint) {
-            color = `rgba(184, 155, 114, ${shade * 0.7})`; // Brighter gold land dots
+            color = `rgba(184, 149, 90, ${shade * 0.9})`; // Brand gold land dots
             dotRadius = 1.5 + shade * 0.8;
           } else {
-            color = `rgba(120, 120, 120, ${shade * 0.22})`; // Brighter grey ocean base dots
+            color = `rgba(73, 106, 130, ${shade * 0.25})`; // Globe blue ocean dots
             dotRadius = 1.0 + shade * 0.4;
           }
 
@@ -231,19 +231,15 @@ export function HeroGlobe() {
           // Animated pulse ring
           ctx.beginPath();
           ctx.arc(px, py, 4 + pulseScale * 10, 0, 2 * Math.PI);
-          ctx.strokeStyle = `rgba(184, 155, 114, ${(1 - pulseScale) * shade * 0.7})`;
+          ctx.strokeStyle = `rgba(184, 149, 90, ${(1 - pulseScale) * shade * 0.8})`;
           ctx.lineWidth = 1.5;
           ctx.stroke();
 
           // Central solid marker dot
           ctx.beginPath();
           ctx.arc(px, py, 3.5, 0, 2 * Math.PI);
-          ctx.fillStyle = `rgba(244, 218, 168, ${shade})`; 
-          ctx.shadowColor = "rgba(184, 155, 114, 0.8)";
-          ctx.shadowBlur = 6;
+          ctx.fillStyle = `rgba(212, 183, 122, ${shade})`; 
           ctx.fill();
-          
-          ctx.shadowBlur = 0; // Reset canvas shadows
         }
       }
 
@@ -260,8 +256,8 @@ export function HeroGlobe() {
   return (
     <div className="relative flex w-full flex-col items-center justify-center">
       {/* Badge above globe */}
-      <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-[#B89B72]/25 bg-[#0B0B0B]/90 px-5 py-2 text-xs font-semibold uppercase tracking-[0.22em] text-[#D8C08C] shadow-[0_0_40px_rgba(184,155,114,0.12)] z-20">
-        <span className="h-1.5 w-1.5 rounded-full bg-[#B89B72] animate-pulse" />
+      <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-[#B8955A] bg-[#EEE7D8] px-5 py-2 text-xs font-semibold uppercase tracking-[0.22em] text-[#8B6F42] z-20">
+        <span className="h-1.5 w-1.5 rounded-full bg-[#B8955A] animate-pulse" />
         Verified Global Hiring Network
       </div>
 
@@ -272,9 +268,6 @@ export function HeroGlobe() {
           height: size,
         }}
       >
-        {/* Soft gold glow behind the canvas globe */}
-        <div className="absolute inset-4 rounded-full bg-[#B89B72]/20 blur-[60px] pointer-events-none" />
-
         <canvas
           ref={canvasRef}
           className="relative z-10 block pointer-events-none"
@@ -288,7 +281,7 @@ export function HeroGlobe() {
       </div>
 
       {/* Caption below globe */}
-      <p className="mt-4 max-w-sm text-center text-sm text-[#B8B2A7] font-sans leading-relaxed italic z-20">
+      <p className="mt-4 max-w-sm text-center text-sm text-[#756B5D] font-sans leading-relaxed italic z-20">
         Connecting Indian talent with verified overseas opportunities.
       </p>
     </div>

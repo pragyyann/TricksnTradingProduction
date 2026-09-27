@@ -329,7 +329,7 @@ function AppointmentBookingFlow() {
   const renderSlotGroup = (title: string, slots: string[]) => {
     return (
       <div className="space-y-3 pt-2">
-        <h4 className="text-xs font-semibold uppercase tracking-wide text-neutral-500 font-sans">{title}</h4>
+        <h4 className="text-xs font-semibold uppercase tracking-wide text-[#8B6F42] font-sans">{title}</h4>
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5">
           {slots.map((slot) => {
             const disabled = isSlotDisabled(slot);
@@ -342,10 +342,10 @@ function AppointmentBookingFlow() {
                 onClick={() => appointmentForm.setValue("appointmentTime", slot, { shouldValidate: true })}
                 className={`h-11 rounded-xl text-sm font-semibold border flex items-center justify-center transition-all cursor-pointer select-none active:scale-[0.98] ${
                   disabled
-                    ? "bg-white/5 border-white/5 text-neutral-600 cursor-not-allowed"
+                    ? "bg-[#EEE7D8]/40 border-[#D8CCB8]/40 text-[#9A9184] cursor-not-allowed"
                     : isSelected
-                    ? "bg-[#B89B72] text-[#050505] border-[#B89B72] shadow-none"
-                    : "bg-[#111111] text-neutral-300 border-white/8 hover:border-[#B89B72]/40 hover:text-white"
+                    ? "bg-[#D4B77A] text-[#3A3024] border-[#D4B77A] shadow-sm font-bold"
+                    : "bg-[#FBF9F4] text-[#756B5D] border-[#D8CCB8] hover:border-[#B8955A] hover:bg-[#EEE7D8] hover:text-[#3A3024]"
                 }`}
               >
                 {slot}
@@ -362,33 +362,33 @@ function AppointmentBookingFlow() {
     const cleanApptId = submittedAppointmentId.trim().replace(/\s+/g, "");
 
     return (
-      <div className="w-full max-w-lg mx-auto bg-[#111111] border border-white/8 rounded-3xl p-8 shadow-none text-center space-y-6">
+      <div className="w-full max-w-lg mx-auto bg-[#FBF9F4] border border-[#D8CCB8] rounded-3xl p-8 shadow-sm text-center space-y-6">
         <div className="flex justify-center">
-          <div className="w-16 h-16 rounded-full bg-emerald-950/20 border border-emerald-900/30 flex items-center justify-center">
-            <CheckCircle2 className="h-9 w-9 text-emerald-400" />
+          <div className="w-16 h-16 rounded-full bg-emerald-500/10 border border-emerald-600/30 flex items-center justify-center">
+            <CheckCircle2 className="h-9 w-9 text-emerald-600" />
           </div>
         </div>
         <div className="space-y-2">
-          <h3 className="text-2xl font-display font-extrabold text-[#F4F1EA]">
+          <h3 className="text-2xl font-display font-extrabold text-[#3A3024]">
             {t("successTitle")}
           </h3>
-          <p className="text-sm text-[#B8B2A7] leading-relaxed max-w-md mx-auto">
+          <p className="text-sm text-[#756B5D] leading-relaxed max-w-md mx-auto">
             Save your Appointment ID. You can present it during office visits or online call syncs.
           </p>
         </div>
         <div className="grid grid-cols-1 gap-4 font-sans text-left">
-          <div className="bg-[#050505] border border-white/8 rounded-2xl p-4 space-y-1">
-            <p className="text-[10px] text-[#7C756A] font-semibold uppercase tracking-wide">Appointment ID</p>
+          <div className="bg-[#EEE7D8] border border-[#D8CCB8] rounded-2xl p-4 space-y-1">
+            <p className="text-[10px] text-[#8B6F42] font-semibold uppercase tracking-wide">Appointment ID</p>
             <div className="flex items-center justify-between gap-4">
-              <p className="text-base font-mono font-bold text-[#F4F1EA] select-all break-all" translate="no">
+              <p className="text-base font-mono font-bold text-[#3A3024] select-all break-all" translate="no">
                 {cleanApptId}
               </p>
               <button
                 type="button"
                 onClick={() => handleCopyAppointmentId(cleanApptId)}
-                className="text-[#7C756A] hover:text-[#B89B72] transition-colors shrink-0"
+                className="text-[#756B5D] hover:text-[#B8955A] transition-colors shrink-0"
               >
-                {copiedId ? <Check className="h-4.5 w-4.5 text-emerald-400" /> : <Copy className="h-4.5 w-4.5" />}
+                {copiedId ? <Check className="h-4.5 w-4.5 text-emerald-600" /> : <Copy className="h-4.5 w-4.5" />}
               </button>
             </div>
           </div>
@@ -397,16 +397,16 @@ function AppointmentBookingFlow() {
           <button
             type="button"
             onClick={() => handleCopyAppointmentId(cleanApptId)}
-            className="w-full flex items-center justify-center gap-2 h-12 bg-[#111111] hover:bg-[#141414] text-[#F4F1EA] border border-white/8 rounded-xl font-bold text-sm transition-all active:scale-[0.98] cursor-pointer"
+            className="w-full flex items-center justify-center gap-2 h-12 bg-[#FBF9F4] hover:bg-[#EEE7D8] text-[#3A3024] border border-[#D8CCB8] rounded-xl font-bold text-sm transition-all active:scale-[0.98] cursor-pointer shadow-sm"
           >
             {copiedId ? (
               <>
-                <Check className="h-4 w-4 text-emerald-400" />
-                <span className="text-emerald-400">Copied!</span>
+                <Check className="h-4 w-4 text-emerald-600" />
+                <span className="text-emerald-700">Copied!</span>
               </>
             ) : (
               <>
-                <Copy className="h-4 w-4" />
+                <Copy className="h-4 w-4 text-[#B8955A]" />
                 <span>{t("copyBtn")}</span>
               </>
             )}
@@ -415,14 +415,14 @@ function AppointmentBookingFlow() {
             href={getWhatsAppLink(cleanAppId, cleanApptId)}
             target="_blank"
             rel="noopener noreferrer"
-            className="w-full flex items-center justify-center gap-2 h-12 bg-emerald-600 hover:bg-emerald-700 text-white rounded-xl font-bold text-sm transition-all active:scale-[0.98] cursor-pointer"
+            className="w-full flex items-center justify-center gap-2 h-12 bg-emerald-600 hover:bg-emerald-700 text-white rounded-xl font-bold text-sm transition-all active:scale-[0.98] cursor-pointer shadow-sm"
           >
             <MessageCircle className="h-5 w-5 fill-white" />
             {t("whatsappBtn")}
           </a>
           <a
             href="/"
-            className="w-full flex items-center justify-center gap-2 h-12 bg-transparent text-[#F4F1EA] border border-white/10 hover:bg-white/5 hover:border-white/20 rounded-xl font-bold text-sm transition-all duration-300"
+            className="w-full flex items-center justify-center gap-2 h-12 bg-transparent text-[#3A3024] border border-[#D8CCB8] hover:bg-[#EEE7D8] rounded-xl font-bold text-sm transition-all duration-300"
           >
             <span>{t("backHome")}</span>
           </a>
@@ -430,7 +430,7 @@ function AppointmentBookingFlow() {
         <button
           type="button"
           onClick={handleReset}
-          className="text-sm text-[#B89B72] hover:text-[#C8AD85] font-semibold cursor-pointer transition-colors pt-2"
+          className="text-sm text-[#B8955A] hover:text-[#8B6F42] font-semibold cursor-pointer transition-colors pt-2"
         >
           ← Book Another Appointment
         </button>
@@ -439,36 +439,36 @@ function AppointmentBookingFlow() {
   }
 
   return (
-    <div className="w-full max-w-4xl mx-auto bg-[#111111] border border-white/8 rounded-3xl p-6 sm:p-10 shadow-none space-y-8">
+    <div className="w-full max-w-4xl mx-auto bg-[#FBF9F4] border border-[#D8CCB8] rounded-3xl p-6 sm:p-10 shadow-sm space-y-8">
       <div className="text-center space-y-3">
         <div className="flex justify-center">
-          <div className="w-14 h-14 rounded-2xl bg-[#050505] border border-white/8 flex items-center justify-center shadow-lg">
-            <Calendar className="h-6 w-6 text-[#B89B72]" />
+          <div className="w-14 h-14 rounded-2xl bg-[#EEE7D8] border border-[#D8CCB8] flex items-center justify-center shadow-sm">
+            <Calendar className="h-6 w-6 text-[#B8955A]" />
           </div>
         </div>
-        <h1 className="text-3xl font-display font-extrabold text-[#F4F1EA]">
+        <h1 className="text-3xl font-display font-extrabold text-[#3A3024]">
           {t("title")}
         </h1>
-        <p className="text-sm text-[#B8B2A7] max-w-md mx-auto leading-relaxed">
+        <p className="text-sm text-[#756B5D] max-w-md mx-auto leading-relaxed">
           {t("subtitle")}
         </p>
       </div>
       <form onSubmit={appointmentForm.handleSubmit(onSubmit)} className="space-y-6">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 font-sans">
           <div className="space-y-2 md:col-span-2">
-            <label htmlFor="appt-visitor-type" className="text-sm font-semibold text-[#B8B2A7]">
+            <label htmlFor="appt-visitor-type" className="text-sm font-semibold text-[#3A3024]">
               {t("visitorType")} <span className="text-red-500">*</span>
             </label>
             <div className="relative">
               <select
                 id="appt-visitor-type"
-                className="flex h-14 w-full rounded-2xl border border-white/10 bg-[#050505] text-white px-5 py-2 text-base outline-none focus:border-[#B89B72]/60 focus:ring-2 focus:ring-[#B89B72]/20 appearance-none cursor-pointer"
+                className="flex h-14 w-full rounded-2xl border border-[#D8CCB8] bg-[#FBF9F4] text-[#3A3024] px-5 py-2 text-base outline-none focus:border-[#B8955A] focus:ring-1 focus:ring-[#B8955A] appearance-none cursor-pointer"
                 {...appointmentForm.register("visitorType")}
               >
-                <option value="Candidate" className="bg-[#050505] text-white">{t("candidateOption")}</option>
-                <option value="B2B Partner" className="bg-[#050505] text-white">{t("partnerOption")}</option>
+                <option value="Candidate" className="bg-[#FBF9F4] text-[#3A3024]">{t("candidateOption")}</option>
+                <option value="B2B Partner" className="bg-[#FBF9F4] text-[#3A3024]">{t("partnerOption")}</option>
               </select>
-              <div className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-[#7C756A]">
+              <div className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-[#9A9184]">
                 ▼
               </div>
             </div>
@@ -476,8 +476,8 @@ function AppointmentBookingFlow() {
           {visitorType === "Candidate" && (
             <>
               <div className="space-y-2">
-                <label htmlFor="appt-application-id" className="text-sm font-semibold text-[#B8B2A7]">
-                  {t("appId")} <span className="text-[#7C756A] font-normal">(Optional)</span>
+                <label htmlFor="appt-application-id" className="text-sm font-semibold text-[#3A3024]">
+                  {t("appId")} <span className="text-[#9A9184] font-normal">(Optional)</span>
                 </label>
                 <Input
                   id="appt-application-id"
@@ -490,7 +490,7 @@ function AppointmentBookingFlow() {
                 )}
               </div>
               <div className="space-y-2">
-                <label htmlFor="appt-full-name" className="text-sm font-semibold text-[#B8B2A7]">
+                <label htmlFor="appt-full-name" className="text-sm font-semibold text-[#3A3024]">
                   {t("fullName")} <span className="text-red-500">*</span>
                 </label>
                 <Input
@@ -508,7 +508,7 @@ function AppointmentBookingFlow() {
           {visitorType === "B2B Partner" && (
             <>
               <div className="space-y-2">
-                <label htmlFor="appt-company-name" className="text-sm font-semibold text-[#B8B2A7]">
+                <label htmlFor="appt-company-name" className="text-sm font-semibold text-[#3A3024]">
                   {t("companyName")} <span className="text-red-500">*</span>
                 </label>
                 <Input
@@ -522,7 +522,7 @@ function AppointmentBookingFlow() {
                 )}
               </div>
               <div className="space-y-2">
-                <label htmlFor="appt-contact-person" className="text-sm font-semibold text-[#B8B2A7]">
+                <label htmlFor="appt-contact-person" className="text-sm font-semibold text-[#3A3024]">
                   {t("contactPerson")} <span className="text-red-500">*</span>
                 </label>
                 <Input
@@ -538,7 +538,7 @@ function AppointmentBookingFlow() {
             </>
           )}
           <div className="space-y-2">
-            <label htmlFor="appt-phone" className="text-sm font-semibold text-[#B8B2A7]">
+            <label htmlFor="appt-phone" className="text-sm font-semibold text-[#3A3024]">
               {t("phone")} <span className="text-red-500">*</span>
             </label>
             <Input
@@ -553,7 +553,7 @@ function AppointmentBookingFlow() {
             )}
           </div>
           <div className="space-y-2">
-            <label htmlFor="appt-email" className="text-sm font-semibold text-[#B8B2A7]">
+            <label htmlFor="appt-email" className="text-sm font-semibold text-[#3A3024]">
               {t("email")} <span className="text-red-500">*</span>
             </label>
             <Input
@@ -568,41 +568,41 @@ function AppointmentBookingFlow() {
             )}
           </div>
           <div className="space-y-2 md:col-span-2">
-            <label htmlFor="appt-type" className="text-sm font-semibold text-[#B8B2A7]">
+            <label htmlFor="appt-type" className="text-sm font-semibold text-[#3A3024]">
               {t("appType")} <span className="text-red-500">*</span>
             </label>
             <div className="relative">
               <select
                 id="appt-type"
-                className={`flex h-14 w-full rounded-2xl border border-white/10 bg-[#050505] text-white px-5 py-2 text-base outline-none focus:border-[#B89B72]/60 focus:ring-2 focus:ring-[#B89B72]/20 appearance-none cursor-pointer ${
-                  appointmentForm.formState.errors.appointmentType ? "border-red-500 focus:ring-red-500/20" : ""
+                className={`flex h-14 w-full rounded-2xl border border-[#D8CCB8] bg-[#FBF9F4] text-[#3A3024] px-5 py-2 text-base outline-none focus:border-[#B8955A] focus:ring-1 focus:ring-[#B8955A] appearance-none cursor-pointer ${
+                  appointmentForm.formState.errors.appointmentType ? "border-red-500 focus:ring-red-500" : ""
                 }`}
                 {...appointmentForm.register("appointmentType")}
               >
-                <option value="Online Appointment" className="bg-[#050505] text-white">{t("onlineApp")}</option>
-                <option value="Office Visit" className="bg-[#050505] text-white">{t("officeVisit")}</option>
+                <option value="Online Appointment" className="bg-[#FBF9F4] text-[#3A3024]">{t("onlineApp")}</option>
+                <option value="Office Visit" className="bg-[#FBF9F4] text-[#3A3024]">{t("officeVisit")}</option>
               </select>
-              <div className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-[#7C756A]">
+              <div className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-[#9A9184]">
                 ▼
               </div>
             </div>
           </div>
           <div className="md:col-span-2">
             {selectedType === "Office Visit" ? (
-              <div className="flex items-start gap-3 bg-[#050505] border border-white/8 rounded-2xl p-4 text-[#F4F1EA]">
-                <MapPin className="h-5 w-5 text-[#B89B72] shrink-0 mt-0.5" />
+              <div className="flex items-start gap-3 bg-[#EEE7D8] border border-[#D8CCB8] rounded-2xl p-4 text-[#3A3024]">
+                <MapPin className="h-5 w-5 text-[#B8955A] shrink-0 mt-0.5" />
                 <div>
-                  <p className="text-xs font-semibold uppercase tracking-wide text-[#7C756A]">Office Location</p>
+                  <p className="text-xs font-semibold uppercase tracking-wide text-[#8B6F42]">Office Location</p>
                   <p className="text-sm font-semibold mt-1 whitespace-pre-line">
                     {CONTACT_INFO.address}
                   </p>
                 </div>
               </div>
             ) : (
-              <div className="flex items-start gap-3 bg-[#050505] border border-white/8 rounded-2xl p-4 text-[#F4F1EA]">
-                <Clock className="h-5 w-5 text-[#B89B72] shrink-0 mt-0.5" />
+              <div className="flex items-start gap-3 bg-[#EEE7D8] border border-[#D8CCB8] rounded-2xl p-4 text-[#3A3024]">
+                <Clock className="h-5 w-5 text-[#B8955A] shrink-0 mt-0.5" />
                 <div>
-                  <p className="text-xs font-semibold uppercase tracking-wide text-[#7C756A]">Online Sync Details</p>
+                  <p className="text-xs font-semibold uppercase tracking-wide text-[#8B6F42]">Online Sync Details</p>
                   <p className="text-sm font-semibold mt-1">
                     Our team will contact you online through call or meeting link if available.
                   </p>
@@ -613,14 +613,14 @@ function AppointmentBookingFlow() {
 
           {/* Date Input with min range */}
           <div className="space-y-2 md:col-span-2">
-            <label htmlFor="appt-date" className="text-sm font-semibold text-[#B8B2A7]">
+            <label htmlFor="appt-date" className="text-sm font-semibold text-[#3A3024]">
               {t("prefDate")} <span className="text-red-500">*</span>
             </label>
             <Input
               id="appt-date"
               type="date"
               min={new Date().toISOString().split("T")[0]}
-              className="h-14 w-full rounded-2xl border border-white/10 bg-black/60 px-5 text-base text-white outline-none [color-scheme:dark] placeholder:text-neutral-500 focus:border-[#B89B72]/60 focus:ring-2 focus:ring-[#B89B72]/20"
+              className="h-14 w-full rounded-2xl border border-[#D8CCB8] bg-[#FBF9F4] px-5 text-base text-[#3A3024] outline-none [color-scheme:light] placeholder:text-[#9A9184] focus:border-[#B8955A] focus:ring-1 focus:ring-[#B8955A]"
               {...appointmentForm.register("appointmentDate")}
             />
             {appointmentForm.formState.errors.appointmentDate && (
@@ -630,7 +630,7 @@ function AppointmentBookingFlow() {
 
           {/* Time Slots Area (Morning / Afternoon / Evening) */}
           <div className="space-y-4 md:col-span-2">
-            <label className="text-sm font-semibold text-[#B8B2A7] flex items-center gap-1.5">
+            <label className="text-sm font-semibold text-[#3A3024] flex items-center gap-1.5">
               {t("prefTime")} <span className="text-red-500">*</span>
             </label>
             
@@ -639,11 +639,11 @@ function AppointmentBookingFlow() {
             )}
 
             {!appointmentDate ? (
-              <div className="bg-[#050505] border border-white/8 rounded-2xl p-6 text-center text-sm text-[#B8B2A7] font-medium">
+              <div className="bg-[#EEE7D8]/50 border border-[#D8CCB8] rounded-2xl p-6 text-center text-sm text-[#756B5D] font-medium">
                 Please select a preferred date first to see available slots.
               </div>
             ) : (
-              <div className="space-y-6 bg-[#050505] border border-white/8 rounded-3xl p-4 sm:p-6">
+              <div className="space-y-6 bg-[#EEE7D8]/50 border border-[#D8CCB8] rounded-3xl p-4 sm:p-6">
                 {renderSlotGroup("Morning", MORNING_SLOTS)}
                 {renderSlotGroup("Afternoon", AFTERNOON_SLOTS)}
                 {renderSlotGroup("Evening", EVENING_SLOTS)}
@@ -652,10 +652,10 @@ function AppointmentBookingFlow() {
           </div>
 
           <div className="space-y-2 md:col-span-2">
-            <label htmlFor="appt-notes" className="text-sm font-semibold text-[#B8B2A7]">
+            <label htmlFor="appt-notes" className="text-sm font-semibold text-[#3A3024]">
               {visitorType === "Candidate" ? (
                 <>
-                  {t("notes")} <span className="text-[#7C756A] font-normal">(Optional)</span>
+                  {t("notes")} <span className="text-[#9A9184] font-normal">(Optional)</span>
                 </>
               ) : (
                 <>
@@ -693,7 +693,7 @@ function AppointmentBookingFlow() {
           <Button
             type="submit"
             variant="primary"
-            className="w-full justify-center gap-2 h-12 font-extrabold text-sm transition-all duration-300 shadow-none rounded-xl"
+            className="w-full justify-center gap-2 h-12 font-extrabold text-sm transition-all duration-300 shadow-sm rounded-xl"
             isLoading={isSubmitting}
             disabled={isSubmitting}
           >
@@ -704,7 +704,7 @@ function AppointmentBookingFlow() {
             href="https://wa.me/919874259915?text=Hi%20ZOVO%20Gateway%2C%20I%20want%20to%20book%20an%20appointment."
             target="_blank"
             rel="noopener noreferrer"
-            className="w-full flex items-center justify-center gap-2 h-12 bg-[#10B981] hover:bg-[#059669] text-white rounded-xl font-bold text-sm transition-all active:scale-[0.98] cursor-pointer font-sans"
+            className="w-full flex items-center justify-center gap-2 h-12 bg-[#10B981] hover:bg-[#059669] text-white rounded-xl font-bold text-sm transition-all active:scale-[0.98] cursor-pointer font-sans shadow-sm"
           >
             <MessageCircle className="h-5 w-5 fill-white" />
             {t("whatsappBtn")}
@@ -720,23 +720,23 @@ export default function AppointmentPage() {
     <>
       <Navbar />
 
-      <main className="flex-1 w-full bg-[#050505] text-[#F4F1EA] pt-32 pb-28 md:pb-20 px-4">
+      <main className="flex-1 w-full bg-[#F7F3EA] text-[#3A3024] pt-32 pb-28 md:pb-20 px-4">
         <div className="max-w-7xl mx-auto space-y-6">
           <div className="max-w-4xl mx-auto">
             <a
               href="/"
-              className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#B8B2A7] hover:text-white transition-colors cursor-pointer group focus:outline-none"
+              className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#756B5D] hover:text-[#3A3024] transition-colors cursor-pointer group focus:outline-none"
             >
-              <ArrowLeft className="h-4 w-4 transition-transform group-hover:-translate-x-1 text-[#B89B72]" />
+              <ArrowLeft className="h-4 w-4 transition-transform group-hover:-translate-x-1 text-[#B8955A]" />
               <span>Back to Home</span>
             </a>
           </div>
 
           <React.Suspense
             fallback={
-              <div className="w-full max-w-2xl mx-auto bg-[#111111] rounded-3xl border border-white/8 shadow-none p-10 flex flex-col items-center gap-4">
-                <span className="w-10 h-10 rounded-full border-4 border-[#B89B72] border-t-transparent animate-spin" />
-                <p className="text-sm text-[#B8B2A7] font-semibold font-sans">
+              <div className="w-full max-w-2xl mx-auto bg-[#FBF9F4] rounded-3xl border border-[#D8CCB8] shadow-sm p-10 flex flex-col items-center gap-4">
+                <span className="w-10 h-10 rounded-full border-4 border-[#B8955A] border-t-transparent animate-spin" />
+                <p className="text-sm text-[#756B5D] font-semibold font-sans">
                   Loading appointment form...
                 </p>
               </div>

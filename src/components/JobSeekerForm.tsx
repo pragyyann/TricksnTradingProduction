@@ -346,35 +346,35 @@ export function JobSeekerForm({
       <div className="space-y-6 text-center">
         {/* Success Icon */}
         <div className="flex justify-center">
-          <div className="w-16 h-16 rounded-full bg-emerald-950/20 border border-emerald-900/30 flex items-center justify-center">
-            <CheckCircle2 className="h-9 w-9 text-emerald-400" />
+          <div className="w-16 h-16 rounded-full bg-emerald-500/10 border border-emerald-600/30 flex items-center justify-center">
+            <CheckCircle2 className="h-9 w-9 text-emerald-600" />
           </div>
         </div>
 
         {/* Success Message */}
         <div className="space-y-2">
-          <h3 className="text-xl font-display font-bold text-[#F4F1EA]">
+          <h3 className="text-xl font-display font-bold text-[#3A3024]">
             Application Submitted Successfully
           </h3>
-          <p className="text-sm text-[#B8B2A7] leading-relaxed">
+          <p className="text-sm text-[#756B5D] leading-relaxed">
             Save your Application ID. You will need it to complete payment later.
           </p>
           {emailStatus === "Sent" && (
-            <p className="text-xs text-emerald-400 mt-2 font-medium bg-emerald-950/20 border border-emerald-900/30 py-1.5 px-3 rounded-lg inline-block">
+            <p className="text-xs text-emerald-700 mt-2 font-medium bg-emerald-50 border border-emerald-200 py-1.5 px-3 rounded-lg inline-block">
               Application slip has been sent to your email.
             </p>
           )}
           {emailStatus === "Failed" && (
-            <p className="text-xs text-amber-400 mt-2 font-medium bg-amber-950/20 border border-amber-900/30 py-1.5 px-3 rounded-lg inline-block">
+            <p className="text-xs text-amber-700 mt-2 font-medium bg-amber-50 border border-amber-200 py-1.5 px-3 rounded-lg inline-block">
               Application submitted, but email could not be sent. Our team will contact you soon.
             </p>
           )}
         </div>
 
         {/* Application ID Display */}
-        <div className="bg-[#050505] border border-white/8 rounded-2xl p-4 space-y-2">
-          <p className="text-xs text-[#7C756A] font-medium uppercase tracking-wider">Application ID</p>
-          <p className="text-lg font-mono font-bold text-[#F4F1EA] break-all select-all whitespace-nowrap" translate="no">
+        <div className="bg-[#EEE7D8] border border-[#D8CCB8] rounded-2xl p-4 space-y-2">
+          <p className="text-xs text-[#8B6F42] font-medium uppercase tracking-wider">Application ID</p>
+          <p className="text-lg font-mono font-bold text-[#3A3024] break-all select-all whitespace-nowrap" translate="no">
             {cleanId}
           </p>
         </div>
@@ -385,16 +385,16 @@ export function JobSeekerForm({
           <button
             type="button"
             onClick={() => handleCopyApplicationId(submittedApplicationId)}
-            className="w-full flex items-center justify-center gap-2 h-11 bg-[#111111] hover:bg-[#141414] text-[#F4F1EA] border border-white/8 rounded-xl font-semibold text-sm transition-all active:scale-[0.98] cursor-pointer"
+            className="w-full flex items-center justify-center gap-2 h-11 bg-[#FBF9F4] hover:bg-[#EEE7D8] text-[#3A3024] border border-[#D8CCB8] rounded-xl font-semibold text-sm transition-all active:scale-[0.98] cursor-pointer shadow-sm"
           >
             {copiedId ? (
               <>
-                <Check className="h-4 w-4 text-emerald-400" />
-                <span className="text-emerald-400">Application ID Copied!</span>
+                <Check className="h-4 w-4 text-emerald-600" />
+                <span className="text-emerald-700">Application ID Copied!</span>
               </>
             ) : (
               <>
-                <Copy className="h-4 w-4" />
+                <Copy className="h-4 w-4 text-[#B8955A]" />
                 <span>Copy Application ID</span>
               </>
             )}
@@ -407,8 +407,8 @@ export function JobSeekerForm({
               onClick={handleImmediatePayment}
               isLoading={isImmediatePaying}
               disabled={isImmediatePaying}
-              variant="accent"
-              className="w-full justify-center gap-2 h-12 text-sm font-bold cursor-pointer shadow-lg shadow-[#B89B72]/20"
+              variant="primary"
+              className="w-full justify-center gap-2 h-12 text-sm font-bold cursor-pointer shadow-sm"
             >
               <CreditCard className="h-5 w-5" />
               Pay
@@ -417,11 +417,11 @@ export function JobSeekerForm({
 
           {/* Payment gateway placeholder / error card inside modal */}
           {immediatePaymentError && (
-            <div className="bg-amber-950/10 border border-amber-900/30 rounded-2xl p-4 text-center space-y-3">
-              <div className="flex items-center gap-2 text-amber-500 justify-center">
+            <div className="bg-[#EEE7D8] border border-[#B8955A]/40 rounded-2xl p-4 text-center space-y-3">
+              <div className="flex items-center gap-2 text-[#8B6F42] justify-center">
                 <span className="font-bold text-sm">Payment Gateway Coming Soon</span>
               </div>
-              <p className="text-xs text-[#B8B2A7] leading-relaxed">
+              <p className="text-xs text-[#756B5D] leading-relaxed">
                 Payment gateway will be available soon. Our team can also assist you on WhatsApp to complete your payment.
               </p>
               <a
@@ -430,9 +430,9 @@ export function JobSeekerForm({
                 )}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-center gap-2 w-full h-11 bg-[#111111] hover:bg-[#141414] text-emerald-400 border border-emerald-900/30 rounded-xl font-bold text-sm transition-all active:scale-[0.98] cursor-pointer"
+                className="flex items-center justify-center gap-2 w-full h-11 bg-[#FBF9F4] hover:bg-[#EEE7D8] text-emerald-700 border border-emerald-600/30 rounded-xl font-bold text-sm transition-all active:scale-[0.98] cursor-pointer shadow-sm"
               >
-                <MessageCircle className="h-4 w-4 fill-emerald-400" />
+                <MessageCircle className="h-4 w-4 fill-emerald-600 text-emerald-600" />
                 Complete Payment via WhatsApp
               </a>
             </div>
@@ -443,7 +443,7 @@ export function JobSeekerForm({
             href={getSuccessWhatsAppLink(submittedApplicationId)}
             target="_blank"
             rel="noopener noreferrer"
-            className="w-full flex items-center justify-center gap-2 h-12 bg-emerald-600 hover:bg-emerald-700 text-white rounded-xl font-bold text-sm transition-all active:scale-[0.98] cursor-pointer"
+            className="w-full flex items-center justify-center gap-2 h-12 bg-emerald-600 hover:bg-emerald-700 text-white rounded-xl font-bold text-sm transition-all active:scale-[0.98] cursor-pointer shadow-sm"
           >
             <MessageCircle className="h-5 w-5 fill-white" />
             Continue on WhatsApp
@@ -452,7 +452,7 @@ export function JobSeekerForm({
           {/* Book Appointment */}
           <a
             href={`/appointment?application_id=${encodeURIComponent(submittedApplicationId)}&full_name=${encodeURIComponent(seekerForm.getValues("fullName"))}&phone=${encodeURIComponent(seekerForm.getValues("phone"))}&email=${encodeURIComponent(seekerForm.getValues("email"))}`}
-            className="w-full flex items-center justify-center gap-2 h-12 bg-transparent text-[#F4F1EA] border border-white/10 hover:bg-white/5 hover:border-white/20 rounded-xl font-bold text-sm transition-all duration-300 active:scale-[0.98] cursor-pointer"
+            className="w-full flex items-center justify-center gap-2 h-12 bg-[#FBF9F4] text-[#3A3024] border border-[#B8955A] hover:bg-[#EEE7D8] rounded-xl font-bold text-sm transition-all duration-300 active:scale-[0.98] cursor-pointer shadow-sm"
           >
             Book Appointment
           </a>
@@ -462,7 +462,7 @@ export function JobSeekerForm({
         <button
           type="button"
           onClick={handleResetForm}
-          className="text-sm text-[#B89B72] hover:text-[#C8AD85] font-semibold cursor-pointer transition-colors"
+          className="text-sm text-[#B8955A] hover:text-[#8B6F42] font-semibold cursor-pointer transition-colors"
         >
           ← Submit Another Application
         </button>
@@ -475,7 +475,7 @@ export function JobSeekerForm({
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 font-sans">
         {/* 1. Full Name */}
         <div className="space-y-2">
-          <label htmlFor="fullName" className="text-sm font-semibold text-[#B8B2A7]">
+          <label htmlFor="fullName" className="text-sm font-semibold text-[#3A3024]">
             Full Name <span className="text-red-500">*</span>
           </label>
           <Input
@@ -491,7 +491,7 @@ export function JobSeekerForm({
 
         {/* 2. Mobile Number */}
         <div className="space-y-2">
-          <label htmlFor="phone" className="text-sm font-semibold text-[#B8B2A7]">
+          <label htmlFor="phone" className="text-sm font-semibold text-[#3A3024]">
             Mobile Number <span className="text-red-500">*</span>
           </label>
           <Input
@@ -508,7 +508,7 @@ export function JobSeekerForm({
 
         {/* 3. Email Address */}
         <div className="space-y-2">
-          <label htmlFor="email" className="text-sm font-semibold text-[#B8B2A7]">
+          <label htmlFor="email" className="text-sm font-semibold text-[#3A3024]">
             Email Address <span className="text-red-500">*</span>
           </label>
           <Input
@@ -525,7 +525,7 @@ export function JobSeekerForm({
 
         {/* 4. Current Location */}
         <div className="space-y-2">
-          <label htmlFor="currentLocation" className="text-sm font-semibold text-[#B8B2A7]">
+          <label htmlFor="currentLocation" className="text-sm font-semibold text-[#3A3024]">
             Current Location <span className="text-red-500">*</span>
           </label>
           <Input
@@ -541,25 +541,25 @@ export function JobSeekerForm({
 
         {/* 5. Preferred Country */}
         <div className="space-y-2">
-          <label htmlFor="preferredCountry" className="text-sm font-semibold text-[#B8B2A7]">
+          <label htmlFor="preferredCountry" className="text-sm font-semibold text-[#3A3024]">
             Preferred Country <span className="text-red-500">*</span>
           </label>
           <div className="relative">
             <select
               id="preferredCountry"
-              className={`flex h-14 w-full rounded-2xl border border-white/10 bg-[#050505] text-white px-5 py-2 text-base outline-none focus:border-[#B89B72]/60 focus:ring-2 focus:ring-[#B89B72]/20 appearance-none cursor-pointer ${
-                seekerForm.formState.errors.preferredCountry ? "border-red-500 focus:ring-red-500/20" : ""
+              className={`flex h-14 w-full rounded-2xl border border-[#D8CCB8] bg-[#FBF9F4] text-[#3A3024] px-5 py-2 text-base outline-none focus:border-[#B8955A] focus:ring-1 focus:ring-[#B8955A] appearance-none cursor-pointer ${
+                seekerForm.formState.errors.preferredCountry ? "border-red-500 focus:ring-red-500" : ""
               }`}
               {...seekerForm.register("preferredCountry")}
             >
-              <option value="" className="bg-[#050505] text-[#7C756A]">Select country...</option>
+              <option value="" className="bg-[#FBF9F4] text-[#9A9184]">Select country...</option>
               {CENTRAL_COUNTRIES.map((c: CountryData) => (
-                <option key={c.slug} value={c.name} className="bg-[#050505] text-white">
+                <option key={c.slug} value={c.name} className="bg-[#FBF9F4] text-[#3A3024]">
                   {getFlagEmoji(c.countryCode)} {c.name}
                 </option>
               ))}
             </select>
-            <div className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-[#7C756A]">
+            <div className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-[#9A9184]">
               ▼
             </div>
           </div>
@@ -570,7 +570,7 @@ export function JobSeekerForm({
 
         {/* 6. Job Interested In */}
         <div className="space-y-2">
-          <label htmlFor="preferredJobRole" className="text-sm font-semibold text-[#B8B2A7]">
+          <label htmlFor="preferredJobRole" className="text-sm font-semibold text-[#3A3024]">
             Job Interested In <span className="text-red-500">*</span>
           </label>
           <Input
@@ -586,24 +586,24 @@ export function JobSeekerForm({
 
         {/* 7. Work Experience */}
         <div className="space-y-2">
-          <label htmlFor="experience" className="text-sm font-semibold text-[#B8B2A7]">
+          <label htmlFor="experience" className="text-sm font-semibold text-[#3A3024]">
             Work Experience <span className="text-red-500">*</span>
           </label>
           <div className="relative">
             <select
               id="experience"
-              className={`flex h-14 w-full rounded-2xl border border-white/10 bg-[#050505] text-white px-5 py-2 text-base outline-none focus:border-[#B89B72]/60 focus:ring-2 focus:ring-[#B89B72]/20 appearance-none cursor-pointer ${
-                seekerForm.formState.errors.experience ? "border-red-500 focus:ring-red-500/20" : ""
+              className={`flex h-14 w-full rounded-2xl border border-[#D8CCB8] bg-[#FBF9F4] text-[#3A3024] px-5 py-2 text-base outline-none focus:border-[#B8955A] focus:ring-1 focus:ring-[#B8955A] appearance-none cursor-pointer ${
+                seekerForm.formState.errors.experience ? "border-red-500 focus:ring-red-500" : ""
               }`}
               {...seekerForm.register("experience")}
             >
-              <option value="" className="bg-[#050505] text-[#7C756A]">Select experience...</option>
-              <option value="Fresher" className="bg-[#050505] text-white">Fresher</option>
-              <option value="1-2 Years" className="bg-[#050505] text-white">1-2 Years</option>
-              <option value="2-5 Years" className="bg-[#050505] text-white">2-5 Years</option>
-              <option value="5+ Years" className="bg-[#050505] text-white">5+ Years</option>
+              <option value="" className="bg-[#FBF9F4] text-[#9A9184]">Select experience...</option>
+              <option value="Fresher" className="bg-[#FBF9F4] text-[#3A3024]">Fresher</option>
+              <option value="1-2 Years" className="bg-[#FBF9F4] text-[#3A3024]">1-2 Years</option>
+              <option value="2-5 Years" className="bg-[#FBF9F4] text-[#3A3024]">2-5 Years</option>
+              <option value="5+ Years" className="bg-[#FBF9F4] text-[#3A3024]">5+ Years</option>
             </select>
-            <div className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-[#7C756A]">
+            <div className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-[#9A9184]">
               ▼
             </div>
           </div>
@@ -614,23 +614,23 @@ export function JobSeekerForm({
 
         {/* 8. Passport Status */}
         <div className="space-y-2">
-          <label htmlFor="passportStatus" className="text-sm font-semibold text-[#B8B2A7]">
+          <label htmlFor="passportStatus" className="text-sm font-semibold text-[#3A3024]">
             Passport Status <span className="text-red-500">*</span>
           </label>
           <div className="relative">
             <select
               id="passportStatus"
-              className={`flex h-14 w-full rounded-2xl border border-white/10 bg-[#050505] text-white px-5 py-2 text-base outline-none focus:border-[#B89B72]/60 focus:ring-2 focus:ring-[#B89B72]/20 appearance-none cursor-pointer ${
-                seekerForm.formState.errors.passportStatus ? "border-red-500 focus:ring-red-500/20" : ""
+              className={`flex h-14 w-full rounded-2xl border border-[#D8CCB8] bg-[#FBF9F4] text-[#3A3024] px-5 py-2 text-base outline-none focus:border-[#B8955A] focus:ring-1 focus:ring-[#B8955A] appearance-none cursor-pointer ${
+                seekerForm.formState.errors.passportStatus ? "border-red-500 focus:ring-red-500" : ""
               }`}
               {...seekerForm.register("passportStatus")}
             >
-              <option value="" className="bg-[#050505] text-[#7C756A]">Select passport status...</option>
-              <option value="Yes, I have passport" className="bg-[#050505] text-white">Yes, I have passport</option>
-              <option value="No, but I have applied" className="bg-[#050505] text-white">No, but I have applied</option>
-              <option value="No, I have not applied" className="bg-[#050505] text-white">No, I have not applied</option>
+              <option value="" className="bg-[#FBF9F4] text-[#9A9184]">Select passport status...</option>
+              <option value="Yes, I have passport" className="bg-[#FBF9F4] text-[#3A3024]">Yes, I have passport</option>
+              <option value="No, but I have applied" className="bg-[#FBF9F4] text-[#3A3024]">No, but I have applied</option>
+              <option value="No, I have not applied" className="bg-[#FBF9F4] text-[#3A3024]">No, I have not applied</option>
             </select>
-            <div className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-[#7C756A]">
+            <div className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-[#9A9184]">
               ▼
             </div>
           </div>
@@ -642,34 +642,34 @@ export function JobSeekerForm({
 
       {/* 8. Upload CV (Optional) */}
       <div className="space-y-2 font-sans">
-        <label className="text-sm font-semibold text-[#B8B2A7] block">
-          Upload CV <span className="text-xs font-normal text-[#7C756A]">(optional)</span>
+        <label className="text-sm font-semibold text-[#3A3024] block">
+          Upload CV <span className="text-xs font-normal text-[#9A9184]">(optional)</span>
         </label>
         {seekerCvName ? (
-          <div className="border border-white/8 rounded-2xl p-4 flex items-center justify-between bg-[#050505] relative">
+          <div className="border border-[#D8CCB8] rounded-2xl p-4 flex items-center justify-between bg-[#FBF9F4] relative">
             <div className="flex items-center gap-3">
-              <div className="bg-emerald-950/30 text-emerald-400 border border-emerald-900/30 p-2 rounded-xl shrink-0">
+              <div className="bg-emerald-500/10 text-emerald-600 border border-emerald-600/30 p-2 rounded-xl shrink-0">
                 <Check className="h-5 w-5" />
               </div>
               <div className="text-left min-w-0">
-                <p className="text-sm font-semibold text-[#F4F1EA] truncate max-w-[150px] sm:max-w-[320px]">
+                <p className="text-sm font-semibold text-[#3A3024] truncate max-w-[150px] sm:max-w-[320px]">
                   {seekerCvName}
                 </p>
                 {seekerCvSize && (
-                  <p className="text-xs text-[#7C756A] font-medium">{seekerCvSize}</p>
+                  <p className="text-xs text-[#9A9184] font-medium">{seekerCvSize}</p>
                 )}
               </div>
             </div>
             <button
               type="button"
               onClick={handleRemoveCv}
-              className="px-3 py-1.5 rounded-lg border border-red-900/30 hover:border-red-500 hover:bg-red-950/20 text-red-400 hover:text-red-300 font-semibold text-xs transition-colors cursor-pointer select-none shrink-0"
+              className="px-3 py-1.5 rounded-lg border border-red-200 hover:border-red-400 hover:bg-red-50 text-red-600 font-semibold text-xs transition-colors cursor-pointer select-none shrink-0"
             >
               Remove
             </button>
           </div>
         ) : (
-          <div className="border border-dashed border-white/10 hover:border-[#B89B72]/40 transition-colors rounded-2xl p-6 flex flex-col items-center justify-center bg-[#050505] relative group">
+          <div className="border border-dashed border-[#D8CCB8] hover:border-[#B8955A] transition-colors rounded-2xl p-6 flex flex-col items-center justify-center bg-[#EEE7D8]/40 relative group">
             <input
               ref={fileInputRef}
               type="file"
@@ -677,12 +677,12 @@ export function JobSeekerForm({
               onChange={handleCvChange}
               className="absolute inset-0 opacity-0 cursor-pointer w-full h-full z-10"
             />
-            <FileUp className="h-8 w-8 text-[#7C756A] mb-2 group-hover:scale-105 group-hover:text-[#B89B72] transition-all" />
-            <span className="text-sm text-[#B8B2A7] font-semibold">Click to select file</span>
-            <span className="text-xs text-[#7C756A] mt-1 text-center px-4 leading-normal">
+            <FileUp className="h-8 w-8 text-[#9A9184] mb-2 group-hover:scale-105 group-hover:text-[#B8955A] transition-all" />
+            <span className="text-sm text-[#3A3024] font-semibold">Click to select file</span>
+            <span className="text-xs text-[#756B5D] mt-1 text-center px-4 leading-normal">
               Accepted formats: PDF, DOC, DOCX (Max 5MB)
             </span>
-            <span className="text-[10px] text-[#7C756A] mt-0.5 text-center px-4 leading-normal font-medium">
+            <span className="text-[10px] text-[#9A9184] mt-0.5 text-center px-4 leading-normal font-medium">
               Our team may ask for the CV again on WhatsApp if required.
             </span>
           </div>
@@ -691,7 +691,7 @@ export function JobSeekerForm({
 
       {/* 9. Message / Extra Details */}
       <div className="space-y-2 font-sans">
-        <label htmlFor="seekerMessage" className="text-sm font-semibold text-[#B8B2A7]">
+        <label htmlFor="seekerMessage" className="text-sm font-semibold text-[#3A3024]">
           Message / Extra Details
         </label>
         <Textarea
@@ -706,10 +706,10 @@ export function JobSeekerForm({
         <label className="flex items-start gap-3 cursor-pointer select-none">
           <input
             type="checkbox"
-            className="mt-1 h-4 w-4 rounded border-white/10 bg-[#050505] text-[#B89B72] focus:ring-[#B89B72] cursor-pointer"
+            className="mt-1 h-4 w-4 rounded border-[#D8CCB8] bg-[#FBF9F4] text-[#B8955A] focus:ring-[#B8955A] cursor-pointer"
             {...seekerForm.register("consent")}
           />
-          <span className="text-sm text-[#B8B2A7] leading-snug">
+          <span className="text-sm text-[#756B5D] leading-snug">
             I agree to be contacted by ZOVO Gateway Overseas regarding job opportunities. <span className="text-red-500">*</span>
           </span>
         </label>
@@ -734,14 +734,14 @@ export function JobSeekerForm({
         <Button
           type="submit"
           variant="primary"
-          className="w-full justify-center gap-2 h-12 font-extrabold text-sm transition-all duration-300 shadow-md hover:shadow-lg active:scale-98 cursor-pointer rounded-xl"
+          className="w-full justify-center gap-2 h-12 font-extrabold text-sm transition-all duration-300 shadow-sm hover:shadow-md active:scale-98 cursor-pointer rounded-xl"
           isLoading={isSubmitting}
           disabled={isSubmitting}
         >
           <Send className="h-4 w-4 shrink-0" />
           <span>{isSubmitting ? "Submitting..." : "Submit Application"}</span>
         </Button>
-        <p className="text-xs text-center text-neutral-500 font-sans">
+        <p className="text-xs text-center text-[#9A9184] font-sans">
           Our team will contact you on WhatsApp/call.
         </p>
       </div>

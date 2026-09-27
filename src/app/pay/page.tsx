@@ -236,20 +236,20 @@ function PaymentFlow() {
 
   const renderLookupState = () => (
     <div className="w-full max-w-lg mx-auto">
-      <div className="bg-[#111111] rounded-3xl border border-white/8 shadow-none p-6 sm:p-10 space-y-6">
+      <div className="bg-[#FBF9F4] rounded-3xl border border-[#D8CCB8] shadow-sm p-6 sm:p-10 space-y-6">
         {/* Icon */}
         <div className="flex justify-center">
-          <div className="w-16 h-16 rounded-2xl bg-[#050505] border border-white/8 flex items-center justify-center shadow-lg">
-            <Search className="h-7 w-7 text-[#B89B72]" />
+          <div className="w-16 h-16 rounded-2xl bg-[#EEE7D8] border border-[#D8CCB8] flex items-center justify-center shadow-sm">
+            <Search className="h-7 w-7 text-[#B8955A]" />
           </div>
         </div>
 
         {/* Heading */}
         <div className="text-center space-y-2">
-          <h1 className="text-3xl font-display font-extrabold text-[#F4F1EA]">
+          <h1 className="text-3xl font-display font-extrabold text-[#3A3024]">
             Complete Your Payment
           </h1>
-          <p className="text-sm text-[#B8B2A7] leading-relaxed max-w-md mx-auto">
+          <p className="text-sm text-[#756B5D] leading-relaxed max-w-md mx-auto">
             Enter your Application ID to view your details and complete your secure payment.
           </p>
         </div>
@@ -258,7 +258,7 @@ function PaymentFlow() {
         <div className="space-y-2 font-sans">
           <label
             htmlFor="pay-application-id"
-            className="text-sm font-semibold text-[#B8B2A7]"
+            className="text-sm font-semibold text-[#756B5D]"
           >
             Application ID
           </label>
@@ -288,9 +288,9 @@ function PaymentFlow() {
 
         {/* Divider */}
         <div className="flex items-center gap-3">
-          <div className="flex-1 h-px bg-white/10" />
-          <span className="text-xs text-neutral-500 font-bold uppercase tracking-wider">or</span>
-          <div className="flex-1 h-px bg-white/10" />
+          <div className="flex-1 h-px bg-[#D8CCB8]" />
+          <span className="text-xs text-[#9A9184] font-bold uppercase tracking-wider">or</span>
+          <div className="flex-1 h-px bg-[#D8CCB8]" />
         </div>
 
         {/* WhatsApp Help */}
@@ -311,15 +311,15 @@ function PaymentFlow() {
     if (!applicationData) return null;
 
     return (
-      <div className="bg-[#111111] rounded-3xl border border-white/8 shadow-none overflow-hidden">
+      <div className="bg-[#FBF9F4] rounded-3xl border border-[#D8CCB8] shadow-sm overflow-hidden">
         {/* Header */}
-        <div className="bg-[#0B0B0B] border-b border-white/8 px-6 sm:px-8 py-6">
+        <div className="bg-[#EEE7D8] border-b border-[#D8CCB8] px-6 sm:px-8 py-6">
           <div className="flex items-center justify-between gap-4">
             <div>
-              <h2 className="text-2xl font-display font-extrabold text-[#F4F1EA]">
+              <h2 className="text-2xl font-display font-extrabold text-[#3A3024]">
                 Payment Summary
               </h2>
-              <p className="text-sm text-[#B8B2A7] mt-1">
+              <p className="text-sm text-[#756B5D] mt-1">
                 Review your application details below.
               </p>
             </div>
@@ -328,7 +328,7 @@ function PaymentFlow() {
                 setPageState("lookup");
                 setApplicationData(null);
               }}
-              className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-[#111111] hover:bg-[#141414] border border-white/8 text-[#B89B72] text-xs font-semibold transition-colors cursor-pointer"
+              className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-[#FBF9F4] hover:bg-[#EEE7D8] border border-[#D8CCB8] text-[#3A3024] text-xs font-semibold transition-colors cursor-pointer"
             >
               <ArrowLeft className="h-3.5 w-3.5 shrink-0" />
               Search another
@@ -340,14 +340,14 @@ function PaymentFlow() {
         <div className="p-6 sm:p-8 grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6">
           {/* Application ID */}
           <div className="space-y-1">
-            <p className="text-xs text-[#7C756A] font-semibold uppercase tracking-wide">Application ID</p>
+            <p className="text-xs text-[#756B5D] font-semibold uppercase tracking-wide">Application ID</p>
             <div className="flex items-center gap-2">
-              <span className="text-sm font-semibold text-[#F4F1EA] break-all select-all font-mono">
+              <span className="text-sm font-semibold text-[#3A3024] break-all select-all font-mono">
                 {applicationData.application_id}
               </span>
               <button
                 onClick={() => handleCopyId(applicationData.application_id)}
-                className="text-neutral-500 hover:text-[#B89B72] transition-colors cursor-pointer shrink-0"
+                className="text-[#9A9184] hover:text-[#B8955A] transition-colors cursor-pointer shrink-0"
                 title="Copy Application ID"
               >
                 {copiedId ? (
@@ -361,47 +361,47 @@ function PaymentFlow() {
 
           {/* Candidate Name */}
           <div className="space-y-1">
-            <p className="text-xs text-[#7C756A] font-semibold uppercase tracking-wide">Candidate Name</p>
-            <p className="text-sm font-semibold text-[#F4F1EA] break-all">
+            <p className="text-xs text-[#756B5D] font-semibold uppercase tracking-wide">Candidate Name</p>
+            <p className="text-sm font-semibold text-[#3A3024] break-all">
               {applicationData.full_name}
             </p>
           </div>
 
           {/* Mobile Number */}
           <div className="space-y-1">
-            <p className="text-xs text-[#7C756A] font-semibold uppercase tracking-wide">Mobile Number</p>
-            <p className="text-sm font-semibold text-[#F4F1EA] break-all" translate="no">
+            <p className="text-xs text-[#756B5D] font-semibold uppercase tracking-wide">Mobile Number</p>
+            <p className="text-sm font-semibold text-[#3A3024] break-all" translate="no">
               {applicationData.mobile_number}
             </p>
           </div>
 
           {/* Job Role */}
           <div className="space-y-1">
-            <p className="text-xs text-[#7C756A] font-semibold uppercase tracking-wide">Job Role</p>
-            <p className="text-sm font-semibold text-[#F4F1EA]">
+            <p className="text-xs text-[#756B5D] font-semibold uppercase tracking-wide">Job Role</p>
+            <p className="text-sm font-semibold text-[#3A3024]">
               {applicationData.preferred_job_role || applicationData.role || "—"}
             </p>
           </div>
 
           {/* Preferred Country */}
           <div className="space-y-1">
-            <p className="text-xs text-[#7C756A] font-semibold uppercase tracking-wide">Preferred Country</p>
-            <p className="text-sm font-semibold text-[#F4F1EA]">
+            <p className="text-xs text-[#756B5D] font-semibold uppercase tracking-wide">Preferred Country</p>
+            <p className="text-sm font-semibold text-[#3A3024]">
               {applicationData.preferred_country || "—"}
             </p>
           </div>
 
           {/* Application Status */}
           <div className="space-y-1">
-            <p className="text-xs text-[#7C756A] font-semibold uppercase tracking-wide">Application Status</p>
-            <p className="text-sm font-semibold text-[#F4F1EA]">
+            <p className="text-xs text-[#756B5D] font-semibold uppercase tracking-wide">Application Status</p>
+            <p className="text-sm font-semibold text-[#3A3024]">
               {applicationData.status || "Pending"}
             </p>
           </div>
 
           {/* Payment Status */}
           <div className="space-y-1">
-            <p className="text-xs text-[#7C756A] font-semibold uppercase tracking-wide">Payment Status</p>
+            <p className="text-xs text-[#756B5D] font-semibold uppercase tracking-wide">Payment Status</p>
             <div>
               {getPaymentBadge(applicationData.payment_status)}
             </div>
@@ -409,8 +409,8 @@ function PaymentFlow() {
 
           {/* Payment Amount */}
           <div className="space-y-1">
-            <p className="text-xs text-[#7C756A] font-semibold uppercase tracking-wide">Payment Amount</p>
-            <p className="text-lg font-extrabold text-[#F4F1EA]">
+            <p className="text-xs text-[#756B5D] font-semibold uppercase tracking-wide">Payment Amount</p>
+            <p className="text-lg font-extrabold text-[#3A3024]">
               {applicationData.payment_amount
                 ? `₹${applicationData.payment_amount}`
                 : "To be confirmed"}
@@ -431,8 +431,8 @@ function PaymentFlow() {
     const isPending = !isPaidStatus && !isFailedStatus && !isProcessingStatus;
 
     return (
-      <div className="bg-[#111111] rounded-3xl border border-white/8 shadow-none p-6 sm:p-8 space-y-6">
-        <h3 className="text-xl font-display font-extrabold text-[#F4F1EA]">
+      <div className="bg-[#FBF9F4] rounded-3xl border border-[#D8CCB8] shadow-sm p-6 sm:p-8 space-y-6">
+        <h3 className="text-xl font-display font-extrabold text-[#3A3024]">
           Next Steps
         </h3>
 
@@ -440,32 +440,32 @@ function PaymentFlow() {
           {isPending && (
             <div className="space-y-3">
               <div className="flex gap-3">
-                <div className="w-6 h-6 rounded-full bg-[#050505] border border-white/8 flex items-center justify-center text-xs font-bold text-[#F4F1EA] shrink-0 mt-0.5">
+                <div className="w-6 h-6 rounded-full bg-[#EEE7D8] border border-[#D8CCB8] flex items-center justify-center text-xs font-bold text-[#3A3024] shrink-0 mt-0.5">
                   1
                 </div>
-                <p className="text-sm text-[#B8B2A7]">
+                <p className="text-sm text-[#756B5D]">
                   <strong>Confirm your details:</strong> Make sure your Application ID, name, and trade details are correct.
                 </p>
               </div>
               <div className="flex gap-3">
-                <div className="w-6 h-6 rounded-full bg-[#050505] border border-white/8 flex items-center justify-center text-xs font-bold text-[#F4F1EA] shrink-0 mt-0.5">
+                <div className="w-6 h-6 rounded-full bg-[#EEE7D8] border border-[#D8CCB8] flex items-center justify-center text-xs font-bold text-[#3A3024] shrink-0 mt-0.5">
                   2
                 </div>
                 {applicationData.payment_amount ? (
-                  <p className="text-sm text-[#B8B2A7]">
+                  <p className="text-sm text-[#756B5D]">
                     <strong>Continue payment:</strong> Your payment is pending. Please continue when you are ready.
                   </p>
                 ) : (
-                  <p className="text-sm text-[#B8B2A7]">
+                  <p className="text-sm text-[#756B5D]">
                     <strong>Continue payment:</strong> Payment amount will be confirmed by our team.
                   </p>
                 )}
               </div>
               <div className="flex gap-3">
-                <div className="w-6 h-6 rounded-full bg-[#050505] border border-white/8 flex items-center justify-center text-xs font-bold text-[#F4F1EA] shrink-0 mt-0.5">
+                <div className="w-6 h-6 rounded-full bg-[#EEE7D8] border border-[#D8CCB8] flex items-center justify-center text-xs font-bold text-[#3A3024] shrink-0 mt-0.5">
                   3
                 </div>
-                <p className="text-sm text-[#B8B2A7]">
+                <p className="text-sm text-[#756B5D]">
                   <strong>Team verification:</strong> Our immigration specialists will verify your secure payment and contact you soon.
                 </p>
               </div>
@@ -474,9 +474,9 @@ function PaymentFlow() {
 
           {isFailedStatus && (
             <div className="space-y-3">
-              <div className="flex gap-3 items-start bg-rose-950/20 rounded-2xl p-4 border border-rose-900/30">
-                <AlertTriangle className="h-5 w-5 text-rose-400 shrink-0 mt-0.5" />
-                <p className="text-sm text-rose-400">
+              <div className="flex gap-3 items-start bg-rose-50 rounded-2xl p-4 border border-rose-200">
+                <AlertTriangle className="h-5 w-5 text-rose-600 shrink-0 mt-0.5" />
+                <p className="text-sm text-rose-700">
                   Your previous payment attempt failed. Please try again or contact our support team.
                 </p>
               </div>
@@ -485,9 +485,9 @@ function PaymentFlow() {
 
           {isProcessingStatus && (
             <div className="space-y-3">
-              <div className="flex gap-3 items-start bg-blue-950/20 rounded-2xl p-4 border border-blue-900/30">
-                <Clock className="h-5 w-5 text-blue-400 shrink-0 mt-0.5" />
-                <p className="text-sm text-blue-400">
+              <div className="flex gap-3 items-start bg-blue-50 rounded-2xl p-4 border border-blue-200">
+                <Clock className="h-5 w-5 text-blue-600 shrink-0 mt-0.5" />
+                <p className="text-sm text-blue-700">
                   Your payment is currently being processed. Please wait a moment while we update your status.
                 </p>
               </div>
@@ -496,9 +496,9 @@ function PaymentFlow() {
 
           {isPaidStatus && (
             <div className="space-y-3">
-              <div className="flex gap-3 items-start bg-emerald-950/20 rounded-2xl p-4 border border-emerald-900/30">
-                <CheckCircle2 className="h-5 w-5 text-emerald-400 shrink-0 mt-0.5" />
-                <p className="text-sm text-emerald-400">
+              <div className="flex gap-3 items-start bg-emerald-50 rounded-2xl p-4 border border-emerald-200">
+                <CheckCircle2 className="h-5 w-5 text-emerald-600 shrink-0 mt-0.5" />
+                <p className="text-sm text-emerald-700">
                   Payment already completed. No further payment is required. Your visa documentation is in progress.
                 </p>
               </div>
@@ -525,7 +525,7 @@ function PaymentFlow() {
             <button
               type="button"
               disabled
-              className="w-full flex items-center justify-center gap-2 h-12 bg-emerald-950/20 text-emerald-400 border border-emerald-900/30 rounded-xl font-bold text-sm cursor-not-allowed select-none"
+              className="w-full flex items-center justify-center gap-2 h-12 bg-emerald-50 text-emerald-700 border border-emerald-200 rounded-xl font-bold text-sm cursor-not-allowed select-none"
             >
               Payment Completed
             </button>
@@ -551,18 +551,18 @@ function PaymentFlow() {
             )}&mobile_number=${encodeURIComponent(
               applicationData.mobile_number
             )}&email=${encodeURIComponent(applicationData.email || "")}`}
-            className="w-full flex items-center justify-center gap-2 h-12 bg-transparent text-[#B89B72] border border-[#B89B72] hover:bg-[#B89B72] hover:text-[#050505] rounded-xl font-bold text-sm transition-all duration-300 active:scale-[0.98] cursor-pointer"
+            className="w-full flex items-center justify-center gap-2 h-12 bg-[#FBF9F4] text-[#3A3024] border border-[#B8955A] hover:bg-[#EEE7D8] rounded-xl font-bold text-sm transition-all duration-300 active:scale-[0.98] cursor-pointer"
           >
             Book Appointment
           </a>
         </div>
 
         {/* Help Card */}
-        <div className="bg-[#050505] border border-white/8 rounded-2xl p-4 text-center font-sans">
-          <p className="text-xs text-[#7C756A] font-semibold uppercase tracking-wide">Need help with payment?</p>
-          <p className="text-sm font-semibold text-[#F4F1EA] mt-1.5">
+        <div className="bg-[#EEE7D8] border border-[#D8CCB8] rounded-2xl p-4 text-center font-sans">
+          <p className="text-xs text-[#756B5D] font-semibold uppercase tracking-wide">Need help with payment?</p>
+          <p className="text-sm font-semibold text-[#3A3024] mt-1.5">
             Call or WhatsApp us at{" "}
-            <a href="tel:+919874259915" className="text-[#B89B72] hover:underline font-bold" translate="no">
+            <a href="tel:+919874259915" className="text-[#B8955A] hover:underline font-bold" translate="no">
               +91 98742 59915
             </a>
           </p>
@@ -573,20 +573,20 @@ function PaymentFlow() {
 
   const renderGatewayPending = () => (
     <div className="w-full max-w-md mx-auto">
-      <div className="bg-[#111111] rounded-3xl border border-white/8 shadow-none p-6 sm:p-10 space-y-6 text-center">
+      <div className="bg-[#FBF9F4] rounded-3xl border border-[#D8CCB8] shadow-sm p-6 sm:p-10 space-y-6 text-center">
         {/* Icon */}
         <div className="flex justify-center">
-          <div className="w-16 h-16 rounded-2xl bg-amber-950/20 border border-amber-900/30 flex items-center justify-center">
-            <AlertTriangle className="h-8 w-8 text-amber-400" />
+          <div className="w-16 h-16 rounded-2xl bg-[#EEE7D8] border border-[#B8955A] flex items-center justify-center">
+            <AlertTriangle className="h-8 w-8 text-[#8B6F42]" />
           </div>
         </div>
 
         {/* Message */}
         <div className="space-y-2">
-          <h2 className="text-2xl font-display font-extrabold text-[#F4F1EA]">
+          <h2 className="text-2xl font-display font-extrabold text-[#3A3024]">
             Payment Gateway Pending
           </h2>
-          <p className="text-sm text-[#B8B2A7] leading-relaxed">
+          <p className="text-sm text-[#756B5D] leading-relaxed">
             Our online payment gateway is currently under maintenance. You can complete your secure payment directly with our team on WhatsApp.
           </p>
         </div>
@@ -609,7 +609,7 @@ function PaymentFlow() {
           onClick={() => {
             setPageState(applicationData ? "summary" : "lookup");
           }}
-          className="text-sm text-[#B89B72] hover:text-[#C8AD85] font-bold cursor-pointer transition-colors"
+          className="text-sm text-[#B8955A] hover:text-[#3A3024] font-bold cursor-pointer transition-colors"
         >
           ← Go back to application details
         </button>
@@ -623,9 +623,9 @@ function PaymentFlow() {
       <div className="flex items-center justify-between">
         <a
           href="/"
-          className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#B8B2A7] hover:text-white transition-colors cursor-pointer group focus:outline-none"
+          className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#756B5D] hover:text-[#3A3024] transition-colors cursor-pointer group focus:outline-none"
         >
-          <ArrowLeft className="h-4 w-4 transition-transform group-hover:-translate-x-1 text-[#B89B72]" />
+          <ArrowLeft className="h-4 w-4 transition-transform group-hover:-translate-x-1 text-[#B8955A]" />
           <span>Back to Home</span>
         </a>
       </div>
@@ -689,12 +689,12 @@ export default function PayPage() {
     <>
       <Navbar />
 
-      <main className="flex-1 w-full bg-[#050505] text-[#F4F1EA] pt-32 pb-28 md:pb-20 px-4">
+      <main className="flex-1 w-full bg-[#F7F3EA] text-[#3A3024] pt-32 pb-28 md:pb-20 px-4">
         <React.Suspense
           fallback={
-            <div className="w-full max-w-md mx-auto bg-[#111111] rounded-3xl border border-white/8 shadow-none p-10 flex flex-col items-center gap-4">
-              <span className="w-10 h-10 rounded-full border-4 border-[#B89B72] border-t-transparent animate-spin" />
-              <p className="text-sm text-[#B8B2A7] font-semibold font-sans">
+            <div className="w-full max-w-md mx-auto bg-[#FBF9F4] rounded-3xl border border-[#D8CCB8] shadow-sm p-10 flex flex-col items-center gap-4">
+              <span className="w-10 h-10 rounded-full border-4 border-[#D4B77A] border-t-transparent animate-spin" />
+              <p className="text-sm text-[#756B5D] font-semibold font-sans">
                 Loading payment portal...
               </p>
             </div>

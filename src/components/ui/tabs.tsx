@@ -45,7 +45,7 @@ export function TabsList({ className, children, ...props }: TabsListProps) {
   return (
     <div
       className={cn(
-        "inline-flex h-12 items-center justify-center rounded-xl bg-[#111111] border border-white/8 p-1 text-[#A3A3A3] w-full md:w-auto md:grid md:grid-cols-2",
+        "inline-flex h-12 items-center justify-center rounded-xl bg-[#EEE7D8] border border-[#D8CCB8] p-1 text-[#756B5D] w-full md:w-auto md:grid md:grid-cols-2",
         className
       )}
       {...props}
@@ -73,8 +73,8 @@ export function TabsTrigger({ value, className, children, ...props }: TabsTrigge
       className={cn(
         "inline-flex items-center justify-center whitespace-nowrap rounded-lg px-6 py-2 text-sm font-medium transition-all focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50 w-full cursor-pointer",
         isActive
-          ? "bg-[#050505] text-white border border-white/8 shadow-sm font-semibold"
-          : "text-[#A3A3A3] hover:text-[#F5F5F5] hover:bg-white/5",
+          ? "bg-[#FBF9F4] text-[#3A3024] border border-[#D8CCB8] shadow-sm font-semibold"
+          : "text-[#756B5D] hover:text-[#3A3024] hover:bg-[#FBF9F4]/60",
         className
       )}
       onClick={() => context.setActiveTab(value)}
@@ -99,7 +99,7 @@ export function TabsContent({ value, className, children, ...props }: TabsConten
     <div
       role="tabpanel"
       className={cn(
-        "mt-6 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#B89B72]",
+        "mt-6 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#B8955A]",
         className
       )}
       {...props}
